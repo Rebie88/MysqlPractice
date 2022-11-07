@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(207, 177, 177);
+    }
+    .container {
+      margin-left: 300px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Add Products</h1>
+      <form action="http://localhost:3001/add-product" method="post">
+        <label for="url">iPhone page url:</label><br />
+        <input type="text" name="url" />
+        <br /><br />
+        <label for="iPhoneName">iPhone Name:</label><br />
+        <input type="text" name="iPhoneName" />
+        <br /><br />
+        <input type="submit" value="App iPhone" />
+      </form>
+    </div>
+  </body>
+</html>
