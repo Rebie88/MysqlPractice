@@ -59,23 +59,14 @@ app.get("/install", (req, res) => {
       User_password varchar(255) not null,
       PRIMARY KEY (user_id)
   )`;
-       let createOrders = `CREATE TABLE if not exists Orders(
-      order_id int auto_increment,
+    let createOrders = `CREATE TABLE if not exists Orders(
+     order_id int auto_increment,
      product_id int(11) not null,
      user_id int(11) not null,
-      FOREIGN KEY (product_id) REFERENCES Products(product_id),
+     FOREIGN KEY (product_id) REFERENCES Products(product_id),
      FOREIGN KEY (user_id) REFERENCES User(user_id)
   )`;
-    let createProduct = `CREATE TABLE if not exists Product(
-      id int auto_increment,
-      Name varchar(255) not null,
-      Description TEXT not null,
-      Price varchar(255) not null,
-      Monthly_plan varchar(255) not null,
-      url varchar(255) not null,
-      img varchar(255) not null,
-      PRIMARY KEY (id)
-  )`;
+
   mysqlConnection.query(createProducts, (err, results, fields) => {
     if (err) console.log(err);
   });
@@ -89,9 +80,6 @@ app.get("/install", (req, res) => {
     if (err) console.log(err);
   });
       mysqlConnection.query(createOrders, (err, results, fields) => {
-    if (err) console.log(err);
-  });
-    mysqlConnection.query(createProduct, (err, results, fields) => {
     if (err) console.log(err);
   });
   res.end(message);
