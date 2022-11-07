@@ -18,6 +18,8 @@ var mysqlConnection = mysql.createConnection({
   password: "myDBuser",
   host: "localhost",
   database: "myDB"
+  
+  // socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", //path to mysql sock in MAMP for mac user
 });
 
 mysqlConnection.connect((error) => {
